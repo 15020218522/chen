@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<style type="text/css">
+			#title{height: 800px;}
+			#title .margin{width: 990px;margin: 0 auto;}
+			#title .margin a:first-child{width: 100%;display: block;height: 60px;margin: 20px 0 70px 0 ;}
+			#title .margin img{float: left;}
+			#title .margin .debark{float: right;height:260px ;width: 320px;}
+			#title .margin .debark h3{float: left;height: 50px;width: 100%;font: 20px/50px "";}
+			#title .margin .debark h3 span:first-child{float: left;}
+			#title .margin .debark h3 span:last-child{float: right;display: block;width: 150px;font: 16px/50px "";}
+			#title .margin .debark h3 span:last-child a{display: inline;margin: 0;color: red;}
+			#title .margin .debark input{float: left;width: 320px;height:38px ;}
+			#txt1{margin-bottom: 15px;}
+			#title .margin .debark p{float: left;height:38px ;}
+			#title .margin .debark p #check{width: 15px;height: 15px;}
+		</style>
+		<script type="text/javascript" src="js/tool.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+
+	</head>
+	<body>	
+		<div id="title">
+			<div class="margin">
+				<a href="#"><img src="img/logo.png"/></a>
+			<img src="img/login-img.gif" />
+			<div class="debark">
+				<h3><span>用户登录</span><span>没有账号?<a href="file:///C:/PHPnow/htdocs/shoping/sanjiang/%E6%B3%A8%E5%86%8C.html">免费注册</a></span></h3>
+				<input type="text" id="txt1" placeholder="用户名/手机/邮箱"/>
+				<input type="text" id="txt2" placeholder="请输入密码"/>
+				<p>
+					<input type="checkbox" checked="checked" id="check" name="自动登录" />
+					<a href="#">忘记密码？</a>
+				</p>
+				<input type="button" value="登录" id="btn"/>
+			</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$("#btn").click(function(){
+				var text1= $("#txt1").val();
+				var text2= $("#txt2").val();
+				var str=$_cookie("购物车");
+				var arr = str.split("?")
+				if (!(text1==arr[0])) {
+					alert("用户名不存在")
+				}else if(!(text2==arr[1])){
+					alert("密码输入错误")
+				}else{
+					alert("登陆成功")
+				}
+			})
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

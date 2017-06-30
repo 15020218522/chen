@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" href="css/details.css"  type="text/css"/>
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script type="text/javascript" src="js/details.js"></script>
+		<script type="text/javascript" src="js/startMove.js" ></script>
+<!--		<script type="text/javascript" src="js/tool.js"></script>-->
+		<script type="text/javascript" src="js/ajax.js"></script>
+		
+	</head>
+	<body>	
+		<header id="header">
+			<div class="margin">
+				<p class="site">
+					送至:&nbsp;澄浪社区 &nbsp;<span><a href="#">﹀</a></span>
+					<div class="div1">
+						<div class="div2">
+							<p class="active"><a href="#">海曙区<span>﹀</span></a></p>
+							<p><a href="#">南门街道<span>﹀</span></a></p>
+							<p><a href="#">澄浪社区<span>﹀</span></a></p>
+							<span class="close">X</span>
+						</div>
+						<ul class="hover">
+							<li><a href="#">海曙区</a></li>
+							<li><a href="#">江东区</a></li>
+							<li><a href="#">江北区</a></li>
+							<li><a href="#">奉化市</a></li>
+							<li><a href="#">瑾州区</a></li>
+						</ul >
+						<ul>
+							<li><a href="#">南门街道</a></li>
+							<li><a href="#">北门街道</a></li>
+							<li><a href="#">西门街道</a></li>
+							<li><a href="#">镇江路街道</a></li>
+							<li><a href="#">金坛路街道</a></li>
+						</ul>
+						<ul>
+							<li><a href="#">澄浪社区</a></li>
+							<li><a href="#">柳锦社区</a></li>
+							<li><a href="#">万安社区</a></li>
+							<li><a href="#">红旗社区</a></li>
+							<li><a href="#">朝阳社区</a></li>
+							<li><a href="#">柳锦社区</a></li>
+							<li><a href="#">万安社区</a></li>
+							<li><a href="#">红旗社区</a></li>
+							<li><a href="#">朝阳社区</a></li>
+						</ul>
+					</div> 
+				</p>
+				<ul class="title">
+					<li class="first">
+						您好，欢迎来到三江！
+					</li>
+					<li class="two">
+						<a href="#">登陆</a>&nbsp;&nbsp;&nbsp;
+						<a href="#">注册</a>
+					</li>
+					<li>
+						<a href="#">我的订单</a>
+					</li>
+					<li>
+						<a href="#">我的三江<span></span></a>
+						<ul>
+							<li><a href="#">我的订单</a></li>
+							<li><a href="#">我的收藏</a></li><br />
+							<li><a href="#">我的优惠劵</a></li>
+							<li><a href="#">地址管理</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">口袋三江</a>
+						<ul>
+							<li>
+								<img src="img/2微码.png"/>
+							</li>
+							<li>
+								<img src="img/2微码.png"/>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">企业团购</a>
+					</li>
+					<li>
+						<a href="#">客服服务</a>
+						<ul>
+							<li><a href="#">帮助中心</a></li>
+							<li><a href="#">客户服务</a></li>
+							<li><a href="#">意见反馈</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">网站导航</a>
+						<ul>
+							<li><a href="#">生鲜超市</a></li>
+							<li><a href="#">三江优选</a></li>
+							<li><a href="#">惠商品</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</header>
+<!--***************************头部********************************-->
+		<div id="menu">
+			<div class="margin">
+				<div class="menu-t">
+					<a href="#" class="logo"><img src="img/logo.png"/></a>
+					<div class="hunt">
+						<input type="text" placeholder="三江购物东边大米" id="txt"/>
+						<input type="button" value="搜索" id="btn"/>
+						<ul id="hot">
+							<li>热门搜索:</li>
+							<li><a href="#">三江购物</a></li>
+							<li><a href="#">大米</a></li>
+							<li><a href="#">蒙牛</a></li>
+							<li><a href="#">伊利</a></li>
+							<li><a href="#">昆仑山</a></li>
+							<li><a href="#">可乐</a></li>
+						</ul>
+						
+					</div>
+					<div id="shop">
+							我的购物车
+						</div>
+				</div>
+				<div class="menu-b">
+					<ul id="whole">
+						<li><a href="#">全部商品分类   <span>﹀</span> </a>
+							<ul id="sideBar">
+								<li><a href="#" class="a"></a><div  style="top: 0;"></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+								<li><a href="#" class="a"></a><div></div></li>
+							</ul>
+							
+						</li>
+						<li><a href="#" style="color: red;">首页</a></li>
+						<li><a href="#">惠商品</a></li>
+						<li><a href="#">生鲜超市</a></li>
+						<li><a href="#">三江优选</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="news">
+			<div class="margin">
+				<h3 class="h3">
+					
+				</h3>
+				<div class="news-t">
+					<div class="commodity">
+						<div class="div1">
+							<div class="p1">
+								<div id="div2"></div>
+								
+						
+								<div id="div5" style="background: ghostwhite;display: none;"></div>
+							</div>
+							<div id="div3">
+								<div id="div4">
+									<img src="img/z1.jpg"/>
+									
+								</div>
+							</div>
+							<p class="p2">
+							
+							</p>
+						</div>
+						<div class="div2">
+							<h4 class="h4">多力甾醇玉米油5L</h4>
+							<div class="a">
+							
+							</div>
+							<div class="b">
+								
+								<p>购买数量<a>-</a><span>1</span><a>+</a></p>
+							</div>
+							<p><input type="submit" value="立即购买"/><input type="button" value="加入购物车"/></p>
+						</div>
+					</div>
+					<div class="trade">
+						
+						<ul class="ul">
+							
+						</ul>
+					</div>
+				</div>
+				<div class="news-b">
+					<div>
+						
+						<ul class="ul1">
+						
+						</ul>
+						<ul class="ul2">
+							
+						</ul>
+					</div>
+					<div>
+						<p class="b_p">
+							
+						</p>
+						<div id="matter">
+							
+							
+							<div></div>
+						</div>
+						
+						
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

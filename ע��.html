@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<style type="text/css">
+			#register{height:702px ;}
+			.margin{width: 990px;height: 702px;margin: 0 auto;}
+			.register-t{width: 990px;height: 120px;}
+			.register-t p:first-child{height:58px ;width: 100%;margin-top: 26px;float: left;}
+			.register-t p:first-child a{display: block;overflow: hidden;float: left;}
+			.register-t p:first-child span{font: 18px/42px "";margin:10px 0 0 20px;display: block;float: left;}
+			.register-t p:last-child{height:36px ;width: 200px;float: right;font: 14px/36px "";}
+			.register-t p:last-child a{background: red;margin: 5px;padding: 5px;}
+			
+			.register-b{border: 1px solid #999999;background: #fcfcfc;}
+			.register-b div{width: 605px;overflow: hidden;}
+			.register-b div p{overflow:hidden;width: 405px;margin:15px 0 0 100px;font: 14px/40px "";}
+			.register-b div p:first-child{margin-top: 45px;}
+			.register-b div p input{height: 40px;float: right;width: 320px;}
+			#btn{width: 280px;height: 50px;font:700 18px/30px "";margin:10px 0 20px 190px;background: red;border: none;color: white;}
+			#check{float: left;margin: 0;width: 20px;height: 20px;margin:10px 5px 0 80px;}
+			.register-b div p:nth-child(5) input{width: 185px;}
+			.register-b div p:nth-child(5) span{width:50px ;height: 30px;background: #f7f7f7;display:block;float: right;margin: 5px 0 0 5px;}
+			#btn2{width: 80px;height: 30px;border: none;background: #fcfcfc;}
+			.register-b div p:nth-child(6) input{width: 220px;}
+			#btn3{width:100px ;}
+			.register-b div .span{width: 340px;color:red;display: inline-block;margin-left: 80px;display: none;}	
+		</style>
+			<script type="text/javascript" src="js/tool.js"></script>
+			<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+
+	
+	</head>
+	<body>	
+		<div id="register">
+			<div class="margin">
+				<div class="register-t">
+					<p><a href="#"><img src="img/logo.png"/></a><span>用户注册</span></p>
+					<p>我们现在就注册<a href="file:///C:/PHPnow/htdocs/shoping/sanjiang/%E7%99%BB%E9%99%86.html#">登录</a></p>
+				</div>
+				<div class="register-b">
+					<div>
+						<p class="p1">用户名：<input type="text" placeholder="请输入用户名"/><span class="span"></span></p>
+						<p class="p2">设置密码：<input type="password" placeholder="请输入密码"/><span class="span"></span></p>
+						<p class="p3">确认密码：<input type="password" placeholder="请确认密码"/><span class="span"></span></p>
+						<p class="p4">手机号：<input type="text" placeholder="请输入手机号"/><span class="span"></span></p>
+						<p>验证码：<input type="button" id="btn2" value="换一张"><span id="span"></span><input type="text" placeholder="请输入验证码" id="txt1"/></p>
+						<p>短信验证：<input type="button" value="获取验证码" id="btn3"/><input type="text" placeholder="请输入短信验证"/></p>
+						<p><input type="checkbox" name="我已阅读同意" checked="checked" id="check"/><a href="#" style="color: red;">《三江用户注册协议》</a> </p>
+						<input type="submit" value="注册" id="btn"/>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			$(function(){
+				var $inpu1 = $(".p1").find("input").eq(0);
+				var $span1 = $(".p1").find("span").eq(0);
+				var $inpu2 = $(".p2").find("input").eq(0);
+				var $span2 = $(".p2").find("span").eq(0);
+				var $inpu3 = $(".p3").find("input").eq(0);
+				var $span3 = $(".p3").find("span").eq(0);
+				var $inpu4= $(".p4").find("input").eq(0);
+				var $span4 = $(".p4").find("span").eq(0);
+				
+				
+				$inpu1.blur(function(){
+					$span1.css("display","block")
+					$span1.html("4-20字符，支持字母，汉字，数字");
+					var cont=$inpu1.val();
+					if (cont=="") {
+						$span1.css("display","block")
+						$span1.html("您输入的用户名格式不正确，请重新输入");
+					}else if($.trim(cont)==""){
+						$span1.css("display","block")
+						$span1.html("您输入的用户名格式不正确，请重新输入");
+					}else if(cont.length<=4 || cont.length>=20){
+						$span1.css("display","block")
+						$span1.html("您输入的位数不在范围内");
+					}else{
+						$span1.html("输入正确");
+					}
+				})
+				$inpu2.blur(function(){
+					
+					$span2.css("display","block")
+					$span2.html("6-20字符，支持字母，数字");
+					var cont=$inpu2.val();
+					var reg = /\d+[a-zA-Z]+/ig
+					if (cont=="") {
+						$span2.css("display","block")
+						$span2.html("您输入的用户名格式不正确，请重新输入");
+					}else if($.trim(cont)==""){
+						$span2.css("display","block")
+						$span2.html("您输入的用户名格式不正确，请重新输入");
+					}else if(cont.length<=4 || cont.length>=20){
+						$span2.css("display","block")
+						$span2.html("您输入的位数不在范围内");
+					}else if(isNaN(cont)==false){
+						$span2.css("display","block")
+						$span2.html("弱");
+						
+					}else if (reg.test(cont)==true || cont.length>=10) {
+						$span2.css("display","block")
+						$span2.html("强");
+						
+					}else if(isNaN(cont)==true || cont.length<=10){
+						$span2.css("display","block")
+						$span2.html("中");
+					
+					}
+				})
+				$inpu3.blur(function(){	
+					var cont=$inpu2.val();
+					var cont1=$inpu3.val();
+					if(cont==cont1){
+						$span3.css("display","block")
+						$span3.html("输入正确");
+						
+					}else{
+						$span3.css("display","block")
+						$span3.html("请重新输入密码");
+					}
+				})
+				$inpu4.blur(function(){	
+					$span4.css("display","block")
+					$span4.html("请输入有效的手机号");
+					var cont=$inpu4.val();
+					var reg=/\^[1]\d{1,11}/ig;
+					if(!(cont.length==11)){
+						$span4.css("display","block")
+						$span4.html("输入的长度不对");
+					}else if (!(/^1[34578]\d{9}$/.test(cont))) {
+						$span4.css("display","block")
+						$span4.html("请重新输入手机号");
+					}else{
+						$span4.css("display","block")
+						$span4.html("输入正确");
+					
+					}
+				})
+				var oBtn = document.getElementById("btn2");
+				var oSpan = document.getElementById("span");
+				oBtn.onclick = function(){
+				//生成验证码
+				oSpan.innerHTML = testCode(4); 
+				}
+				function testCode(n){
+					//n 生成几位验证码
+					var arr = []; //数组存储验证码
+					for(var i = 0; i < n; i++){
+						//<1>随机0~100的数
+						var tmp = parseInt(Math.random() * 100);
+						if(tmp < 10){ //数字
+							arr.push(tmp);
+						}else if(tmp >= 65 && tmp <= 90){ //大写字母
+							var str = String.fromCharCode(tmp);
+							arr.push(str);
+						}else if(tmp >= 17 && tmp <= 42){ //小写字母
+							var str = String.fromCharCode(tmp + 80);
+							arr.push(str);
+						}else{
+							//无效数字
+							i--;
+						}
+					}
+					return arr.join("");
+				}
+				$("#txt1").blur(function(){
+					var cont=$("#txt1").val();
+					var span = $("#span").html();
+					if (!(cont==span)) {
+						alert("验证码输入错误")
+					}
+					
+				})
+				$("#btn").click(function(){
+					alert(11)
+					$_cookie("购物车",$inpu1.val()+"?"+$inpu3.val(),{expires:7,});
+					
+				})
+			})
+		
+		
+		
+		</script>
+		
+		
+		
+	</body>
+</html>
